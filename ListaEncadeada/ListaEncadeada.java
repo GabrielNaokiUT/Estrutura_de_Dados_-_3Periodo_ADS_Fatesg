@@ -3,15 +3,13 @@ package ListaEncadeada;
 public class ListaEncadeada {
     No inicio = null;
 
-    // Inserção no Início (Conforme slide 9)
     public void inserirInicio(int valor) {
         No p = new No();
         p.setDado(valor);
         p.setProximo(inicio);
         inicio = p;
     }
-
-    // Inserção no Final (Exige percorrer a lista - slide 9)
+    
     public void inserirFinal(int valor) {
         No p = new No();
         p.setDado(valor);
@@ -28,7 +26,6 @@ public class ListaEncadeada {
         }
     }
 
-    // Percurso para exibição (Slide 12)
     public void consultar() {
         No aux = inicio;
         if (aux == null) {
@@ -42,7 +39,6 @@ public class ListaEncadeada {
         }
     }
 
-    // Busca de elemento (Slide 10)
     public boolean buscar(int valor) {
         No aux = inicio;
         while (aux != null) {
@@ -54,14 +50,12 @@ public class ListaEncadeada {
         return false;
     }
 
-    // Remoção de elemento específico (Ajuste de referências - slide 11)
     public void excluir(int valor) {
         if (inicio == null) {
             System.out.println("Lista vazia.");
             return;
         }
 
-        // Caso o elemento esteja logo no início
         if (inicio.getDado() == valor) {
             inicio = inicio.getProximo();
             return;
@@ -76,7 +70,7 @@ public class ListaEncadeada {
         }
 
         if (atual != null) {
-            // "Pula" o nó atual, ligando o anterior ao próximo
+
             anterior.setProximo(atual.getProximo());
         } else {
             System.out.println("Valor não encontrado.");

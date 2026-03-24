@@ -3,7 +3,6 @@ package Pilha;
 public class Pilha {
     No topo = null;
 
-    // LIFO: insere sempre no topo
     public void empilhar(int valor) {
         No p = new No();
         p.setDado(valor);
@@ -17,7 +16,6 @@ public class Pilha {
         }
     }
 
-    // Exibe todos os elementos do topo até o fundo
     public void consultar() {
         No aux = topo;
         if (aux == null) {
@@ -29,7 +27,6 @@ public class Pilha {
         }
     }
 
-    // LIFO: remove sempre do topo
     public int desempilhar() {
         No aux = topo;
         if (topo != null) {
